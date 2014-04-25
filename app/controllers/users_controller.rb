@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user #note that we can omit URL in redirect, this works
+      sign_in @user
     else
       render 'new'
     end
